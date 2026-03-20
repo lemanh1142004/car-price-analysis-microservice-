@@ -76,6 +76,7 @@ public class CarService {
         car.setOrigin(request.getOrigin());
         car.setStatus(request.getStatus());
         car.setDescription(request.getDescription());
+        car.setImageUrl(request.getImageUrl());
     }
 
     private CarResponse mapEntityToResponse(Car car) {
@@ -94,6 +95,7 @@ public class CarService {
         response.setDescription(car.getDescription());
         response.setCreatedAt(car.getCreatedAt());
         response.setUpdatedAt(car.getUpdatedAt());
+        response.setImageUrl(car.getImageUrl());
         return response;
     }
 }

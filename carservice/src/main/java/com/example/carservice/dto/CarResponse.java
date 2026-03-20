@@ -19,29 +19,30 @@ public class CarResponse {
     private String description;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
-
+    private String imageUrl;
     public CarResponse() {
     }
 
-    public CarResponse(Long id, String brand, String model, Integer year, BigDecimal price,
-                       Integer mileage, String fuelType, String transmission, String color,
-                       String origin, String status, String description,
-                       LocalDateTime createdAt, LocalDateTime updatedAt) {
-        this.id = id;
-        this.brand = brand;
-        this.model = model;
-        this.year = year;
-        this.price = price;
-        this.mileage = mileage;
-        this.fuelType = fuelType;
-        this.transmission = transmission;
-        this.color = color;
-        this.origin = origin;
-        this.status = status;
-        this.description = description;
-        this.createdAt = createdAt;
-        this.updatedAt = updatedAt;
-    }
+ public CarResponse(Long id, String brand, String model, Integer year, BigDecimal price,
+                   Integer mileage, String fuelType, String transmission, String color,
+                   String origin, String status, String description, String imageUrl,
+                   LocalDateTime createdAt, LocalDateTime updatedAt) {
+    this.id = id;
+    this.brand = brand;
+    this.model = model;
+    this.year = year;
+    this.price = price;
+    this.mileage = mileage;
+    this.fuelType = fuelType;
+    this.transmission = transmission;
+    this.color = color;
+    this.origin = origin;
+    this.status = status;
+    this.description = description;
+    this.imageUrl = imageUrl;
+    this.createdAt = createdAt;
+    this.updatedAt = updatedAt;
+}
 
     public Long getId() {
         return id;
@@ -58,6 +59,13 @@ public class CarResponse {
     public Integer getYear() {
         return year;
     }
+    public String getImageUrl() {
+    return imageUrl;
+}
+
+public void setImageUrl(String imageUrl) {
+    this.imageUrl = imageUrl;
+}
 
     public BigDecimal getPrice() {
         return price;

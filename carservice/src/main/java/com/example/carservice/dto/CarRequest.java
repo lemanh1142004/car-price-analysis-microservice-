@@ -32,26 +32,33 @@ public class CarRequest {
     private String origin;
     private String status;
     private String description;
-
+    private String imageUrl;
     public CarRequest() {
     }
 
-    public CarRequest(String brand, String model, Integer year, BigDecimal price, Integer mileage,
-                      String fuelType, String transmission, String color, String origin,
-                      String status, String description) {
-        this.brand = brand;
-        this.model = model;
-        this.year = year;
-        this.price = price;
-        this.mileage = mileage;
-        this.fuelType = fuelType;
-        this.transmission = transmission;
-        this.color = color;
-        this.origin = origin;
-        this.status = status;
-        this.description = description;
-    }
+public CarRequest(String brand, String model, Integer year, BigDecimal price, Integer mileage,
+                  String fuelType, String transmission, String color, String origin,
+                  String status, String description, String imageUrl) {
+    this.brand = brand;
+    this.model = model;
+    this.year = year;
+    this.price = price;
+    this.mileage = mileage;
+    this.fuelType = fuelType;
+    this.transmission = transmission;
+    this.color = color;
+    this.origin = origin;
+    this.status = status;
+    this.description = description;
+    this.imageUrl = imageUrl;
+}
+public String getImageUrl() {
+    return imageUrl;
+}
 
+public void setImageUrl(String imageUrl) {
+    this.imageUrl = imageUrl;
+}
     public String getBrand() {
         return brand;
     }

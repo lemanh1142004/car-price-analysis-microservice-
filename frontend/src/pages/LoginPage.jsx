@@ -43,40 +43,68 @@ function LoginPage() {
   };
 
   return (
-    <div className="page-center">
-      <div className="card">
-        <h2>Đăng nhập</h2>
+    <div className="auth-page">
+      <div className="auth-layout">
+        <div className="auth-left">
+          <div className="auth-brand">Car Price Analytics</div>
+          <h1>Đăng nhập để tiếp tục</h1>
+          <p>
+            Truy cập hệ thống quản lý ô tô, phân khúc giá thông minh
+            và gợi ý các xe liên quan theo dữ liệu thực tế.
+          </p>
 
-        <form className="auth-form" onSubmit={handleSubmit}>
-          <input
-            type="email"
-            name="email"
-            placeholder="Nhập email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
+          <div className="auth-feature-list">
+            <div className="auth-feature-item">Quản lý danh sách xe</div>
+            <div className="auth-feature-item">Phân khúc xe theo AI</div>
+            <div className="auth-feature-item">Gợi ý xe liên quan</div>
+          </div>
+        </div>
 
-          <input
-            type="password"
-            name="password"
-            placeholder="Nhập mật khẩu"
-            value={formData.password}
-            onChange={handleChange}
-            required
-          />
+        <div className="auth-right">
+          <div className="auth-card">
+            <div className="auth-card-header">
+              <h2>Đăng nhập</h2>
+              <p>Nhập thông tin tài khoản để truy cập hệ thống</p>
+            </div>
 
-          <button type="submit" disabled={loading}>
-            {loading ? "Đang đăng nhập..." : "Đăng nhập"}
-          </button>
-        </form>
+            <form className="auth-form modern-auth-form" onSubmit={handleSubmit}>
+              <div className="form-group">
+                <label>Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Nhập email của bạn"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
 
-        {message && <p className="success">{message}</p>}
-        {error && <p className="error">{error}</p>}
+              <div className="form-group">
+                <label>Mật khẩu</label>
+                <input
+                  type="password"
+                  name="password"
+                  placeholder="Nhập mật khẩu"
+                  value={formData.password}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
 
-        <p className="switch-text">
-          Chưa có tài khoản? <Link to="/register">Đăng ký</Link>
-        </p>
+              <button className="auth-submit-btn" type="submit" disabled={loading}>
+                {loading ? "Đang đăng nhập..." : "Đăng nhập"}
+              </button>
+            </form>
+
+            {message && <p className="success">{message}</p>}
+            {error && <p className="error">{error}</p>}
+
+            <p className="switch-text">
+              Chưa có tài khoản? <Link to="/register">Đăng ký ngay</Link>
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   );

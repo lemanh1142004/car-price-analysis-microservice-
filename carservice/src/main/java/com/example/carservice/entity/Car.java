@@ -56,13 +56,14 @@ public class Car {
 
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
-
+@Column(name = "image_url")
+private String imageUrl;
     public Car() {
     }
 
     public Car(Long id, String brand, String model, Integer year, BigDecimal price, Integer mileage,
                String fuelType, String transmission, String color, String origin, String status,
-               String description, LocalDateTime createdAt, LocalDateTime updatedAt) {
+               String description, LocalDateTime createdAt, LocalDateTime updatedAt, String imageUrl) {
         this.id = id;
         this.brand = brand;
         this.model = model;
@@ -77,8 +78,14 @@ public class Car {
         this.description = description;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
+        this.imageUrl = imageUrl;
     }
-
+    public String getImageUrl() {
+        return imageUrl;
+    }
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
     public Long getId() {
         return id;
     }
