@@ -1,165 +1,186 @@
 package com.example.carservice.dto;
 
-import java.math.BigDecimal;
-import java.time.LocalDateTime;
-
 public class CarResponse {
 
     private Long id;
-    private String brand;
-    private String model;
-    private Integer year;
-    private BigDecimal price;
-    private Integer mileage;
-    private String fuelType;
-    private String transmission;
-    private String color;
-    private String origin;
-    private String status;
-    private String description;
-    private LocalDateTime createdAt;
-    private LocalDateTime updatedAt;
-    private String imageUrl;
+    private String maTin;
+    private String tieuDe;
+    private String url;
+    private String urlHinhAnh;
+    private String ngayDang;
+    private String namSX;
+    private String xuatXu;
+    private String diaDiem;
+    private String kieuDang;
+    private String soKmDaDi;
+    private String hopSo;
+    private String tinhTrang;
+    private String nhienLieu;
+    private String gia;
+    private String tenNguoiBan;
+private String sdtNguoiBan;
+private String salonShowroom;
+private String loaiNguoiBan;
+private String diaChiNguoiBan;
+public String getTenNguoiBan() {
+    return tenNguoiBan;
+}
+
+public void setTenNguoiBan(String tenNguoiBan) {
+    this.tenNguoiBan = tenNguoiBan;
+}
+
+public String getSdtNguoiBan() {
+    return sdtNguoiBan;
+}
+
+public void setSdtNguoiBan(String sdtNguoiBan) {
+    this.sdtNguoiBan = sdtNguoiBan;
+}
+
+public String getSalonShowroom() {
+    return salonShowroom;
+}
+
+public void setSalonShowroom(String salonShowroom) {
+    this.salonShowroom = salonShowroom;
+}
+
+public String getLoaiNguoiBan() {
+    return loaiNguoiBan;
+}
+
+public void setLoaiNguoiBan(String loaiNguoiBan) {
+    this.loaiNguoiBan = loaiNguoiBan;
+}
+
+public String getDiaChiNguoiBan() {
+    return diaChiNguoiBan;
+}
+
+public void setDiaChiNguoiBan(String diaChiNguoiBan) {
+    this.diaChiNguoiBan = diaChiNguoiBan;
+}
     public CarResponse() {
     }
-
- public CarResponse(Long id, String brand, String model, Integer year, BigDecimal price,
-                   Integer mileage, String fuelType, String transmission, String color,
-                   String origin, String status, String description, String imageUrl,
-                   LocalDateTime createdAt, LocalDateTime updatedAt) {
-    this.id = id;
-    this.brand = brand;
-    this.model = model;
-    this.year = year;
-    this.price = price;
-    this.mileage = mileage;
-    this.fuelType = fuelType;
-    this.transmission = transmission;
-    this.color = color;
-    this.origin = origin;
-    this.status = status;
-    this.description = description;
-    this.imageUrl = imageUrl;
-    this.createdAt = createdAt;
-    this.updatedAt = updatedAt;
-}
 
     public Long getId() {
         return id;
     }
 
-    public String getBrand() {
-        return brand;
+    public String getMaTin() {
+        return maTin;
     }
 
-    public String getModel() {
-        return model;
+    public String getTieuDe() {
+        return tieuDe;
     }
 
-    public Integer getYear() {
-        return year;
-    }
-    public String getImageUrl() {
-    return imageUrl;
-}
-
-public void setImageUrl(String imageUrl) {
-    this.imageUrl = imageUrl;
-}
-
-    public BigDecimal getPrice() {
-        return price;
+    public String getUrl() {
+        return url;
     }
 
-    public Integer getMileage() {
-        return mileage;
+    public String getUrlHinhAnh() {
+        return urlHinhAnh;
     }
 
-    public String getFuelType() {
-        return fuelType;
+    public String getNgayDang() {
+        return ngayDang;
     }
 
-    public String getTransmission() {
-        return transmission;
+    public String getNamSX() {
+        return namSX;
     }
 
-    public String getColor() {
-        return color;
+    public String getXuatXu() {
+        return xuatXu;
     }
 
-    public String getOrigin() {
-        return origin;
+    public String getDiaDiem() {
+        return diaDiem;
     }
 
-    public String getStatus() {
-        return status;
+    public String getKieuDang() {
+        return kieuDang;
     }
 
-    public String getDescription() {
-        return description;
+    public String getSoKmDaDi() {
+        return soKmDaDi;
     }
 
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
+    public String getHopSo() {
+        return hopSo;
     }
 
-    public LocalDateTime getUpdatedAt() {
-        return updatedAt;
+    public String getTinhTrang() {
+        return tinhTrang;
+    }
+
+    public String getNhienLieu() {
+        return nhienLieu;
+    }
+
+    public String getGia() {
+        return gia;
     }
 
     public void setId(Long id) {
         this.id = id;
     }
 
-    public void setBrand(String brand) {
-        this.brand = brand;
+    public void setMaTin(String maTin) {
+        this.maTin = maTin;
     }
 
-    public void setModel(String model) {
-        this.model = model;
+    public void setTieuDe(String tieuDe) {
+        this.tieuDe = tieuDe;
     }
 
-    public void setYear(Integer year) {
-        this.year = year;
+    public void setUrl(String url) {
+        this.url = url;
     }
 
-    public void setPrice(BigDecimal price) {
-        this.price = price;
+    public void setUrlHinhAnh(String urlHinhAnh) {
+        this.urlHinhAnh = urlHinhAnh;
     }
 
-    public void setMileage(Integer mileage) {
-        this.mileage = mileage;
+    public void setNgayDang(String ngayDang) {
+        this.ngayDang = ngayDang;
     }
 
-    public void setFuelType(String fuelType) {
-        this.fuelType = fuelType;
+    public void setNamSX(String namSX) {
+        this.namSX = namSX;
     }
 
-    public void setTransmission(String transmission) {
-        this.transmission = transmission;
+    public void setXuatXu(String xuatXu) {
+        this.xuatXu = xuatXu;
     }
 
-    public void setColor(String color) {
-        this.color = color;
+    public void setDiaDiem(String diaDiem) {
+        this.diaDiem = diaDiem;
     }
 
-    public void setOrigin(String origin) {
-        this.origin = origin;
+    public void setKieuDang(String kieuDang) {
+        this.kieuDang = kieuDang;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setSoKmDaDi(String soKmDaDi) {
+        this.soKmDaDi = soKmDaDi;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setHopSo(String hopSo) {
+        this.hopSo = hopSo;
     }
 
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
+    public void setTinhTrang(String tinhTrang) {
+        this.tinhTrang = tinhTrang;
     }
 
-    public void setUpdatedAt(LocalDateTime updatedAt) {
-        this.updatedAt = updatedAt;
+    public void setNhienLieu(String nhienLieu) {
+        this.nhienLieu = nhienLieu;
+    }
+
+    public void setGia(String gia) {
+        this.gia = gia;
     }
 }

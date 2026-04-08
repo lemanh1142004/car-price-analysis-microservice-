@@ -294,3 +294,40 @@ a {
     grid-template-columns: 1fr;
   }
 }
+.pagination {
+  margin-top: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.pagination button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  background: #2563eb;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.pagination button:hover {
+  background: #1e40af;
+}
+
+.pagination button:disabled {
+  background: #cbd5e1;
+  cursor: not-allowed;
+}
+
+.active-page {
+  background: #f59e0b !important;
+  color: white;
+}
+
+.pagination span {
+  font-weight: bold;
+  padding: 0 4px;
+}

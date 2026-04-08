@@ -1,7 +1,5 @@
 package com.example.carservice.controller;
 
-import java.util.List;
-
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -11,10 +9,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.carservice.dto.CarRequest;
 import com.example.carservice.dto.CarResponse;
+import com.example.carservice.dto.PagedResponse;
 import com.example.carservice.service.CarService;
 
 import jakarta.validation.Valid;
@@ -36,22 +36,22 @@ public class CarController {
     }
 
     @GetMapping
-    public ResponseEntity<List<CarResponse>> getAllCars() {
-        List<CarResponse> cars = carService.getAllCars();
-        return ResponseEntity.ok(cars);
+    public ResponseEntity<PagedResponse<CarResponse>> getValidCars(
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "8") int size
+    ) {
+        return ResponseEntity.ok(carService.getValidCars(page, size));
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<CarResponse> getCarById(@PathVariable Long id) {
-        CarResponse car = carService.getCarById(id);
-        return ResponseEntity.ok(car);
+        return ResponseEntity.ok(carService.getCarById(id));
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<CarResponse> updateCar(@PathVariable Long id,
                                                  @Valid @RequestBody CarRequest request) {
-        CarResponse updatedCar = carService.updateCar(id, request);
-        return ResponseEntity.ok(updatedCar);
+        return ResponseEntity.ok(carService.updateCar(id, request));
     }
 
     @DeleteMapping("/{id}")

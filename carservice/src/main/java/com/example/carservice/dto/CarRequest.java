@@ -1,149 +1,181 @@
 package com.example.carservice.dto;
 
-import java.math.BigDecimal;
-
-import jakarta.validation.constraints.DecimalMin;
-import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
 
 public class CarRequest {
 
-    @NotBlank(message = "Brand is required")
-    private String brand;
+    @NotBlank(message = "Mã tin is required")
+    private String maTin;
 
-    @NotBlank(message = "Model is required")
-    private String model;
+    private String tieuDe;
+    private String url;
+    private String urlHinhAnh;
+    private String ngayDang;
+    private String namSX;
+    private String xuatXu;
+    private String diaDiem;
+    private String kieuDang;
+    private String soKmDaDi;
+    private String hopSo;
+    private String tinhTrang;
+    private String nhienLieu;
+    private String gia;
+    private String tenNguoiBan;
+private String sdtNguoiBan;
+private String salonShowroom;
+private String loaiNguoiBan;
+private String diaChiNguoiBan;
 
-    @NotNull(message = "Year is required")
-    @Min(value = 1900, message = "Year must be greater than or equal to 1900")
-    private Integer year;
-
-    @NotNull(message = "Price is required")
-    @DecimalMin(value = "0.0", inclusive = false, message = "Price must be greater than 0")
-    private BigDecimal price;
-
-    @Min(value = 0, message = "Mileage must be greater than or equal to 0")
-    private Integer mileage;
-
-    private String fuelType;
-    private String transmission;
-    private String color;
-    private String origin;
-    private String status;
-    private String description;
-    private String imageUrl;
     public CarRequest() {
     }
-
-public CarRequest(String brand, String model, Integer year, BigDecimal price, Integer mileage,
-                  String fuelType, String transmission, String color, String origin,
-                  String status, String description, String imageUrl) {
-    this.brand = brand;
-    this.model = model;
-    this.year = year;
-    this.price = price;
-    this.mileage = mileage;
-    this.fuelType = fuelType;
-    this.transmission = transmission;
-    this.color = color;
-    this.origin = origin;
-    this.status = status;
-    this.description = description;
-    this.imageUrl = imageUrl;
-}
-public String getImageUrl() {
-    return imageUrl;
+public String getTenNguoiBan() {
+    return tenNguoiBan;
 }
 
-public void setImageUrl(String imageUrl) {
-    this.imageUrl = imageUrl;
+public void setTenNguoiBan(String tenNguoiBan) {
+    this.tenNguoiBan = tenNguoiBan;
 }
-    public String getBrand() {
-        return brand;
+
+public String getSdtNguoiBan() {
+    return sdtNguoiBan;
+}
+
+public void setSdtNguoiBan(String sdtNguoiBan) {
+    this.sdtNguoiBan = sdtNguoiBan;
+}
+
+public String getSalonShowroom() {
+    return salonShowroom;
+}
+
+public void setSalonShowroom(String salonShowroom) {
+    this.salonShowroom = salonShowroom;
+}
+
+public String getLoaiNguoiBan() {
+    return loaiNguoiBan;
+}
+
+public void setLoaiNguoiBan(String loaiNguoiBan) {
+    this.loaiNguoiBan = loaiNguoiBan;
+}
+
+public String getDiaChiNguoiBan() {
+    return diaChiNguoiBan;
+}
+
+public void setDiaChiNguoiBan(String diaChiNguoiBan) {
+    this.diaChiNguoiBan = diaChiNguoiBan;
+}
+    public String getMaTin() {
+        return maTin;
     }
 
-    public String getModel() {
-        return model;
+    public void setMaTin(String maTin) {
+        this.maTin = maTin;
     }
 
-    public Integer getYear() {
-        return year;
+    public String getTieuDe() {
+        return tieuDe;
     }
 
-    public BigDecimal getPrice() {
-        return price;
+    public void setTieuDe(String tieuDe) {
+        this.tieuDe = tieuDe;
     }
 
-    public Integer getMileage() {
-        return mileage;
+    public String getUrl() {
+        return url;
     }
 
-    public String getFuelType() {
-        return fuelType;
+    public void setUrl(String url) {
+        this.url = url;
     }
 
-    public String getTransmission() {
-        return transmission;
+    public String getUrlHinhAnh() {
+        return urlHinhAnh;
     }
 
-    public String getColor() {
-        return color;
+    public void setUrlHinhAnh(String urlHinhAnh) {
+        this.urlHinhAnh = urlHinhAnh;
     }
 
-    public String getOrigin() {
-        return origin;
+    public String getNgayDang() {
+        return ngayDang;
     }
 
-    public String getStatus() {
-        return status;
+    public void setNgayDang(String ngayDang) {
+        this.ngayDang = ngayDang;
     }
 
-    public String getDescription() {
-        return description;
+    public String getNamSX() {
+        return namSX;
     }
 
-    public void setBrand(String brand) {
-        this.brand = brand;
+    public void setNamSX(String namSX) {
+        this.namSX = namSX;
     }
 
-    public void setModel(String model) {
-        this.model = model;
+    public String getXuatXu() {
+        return xuatXu;
     }
 
-    public void setYear(Integer year) {
-        this.year = year;
+    public void setXuatXu(String xuatXu) {
+        this.xuatXu = xuatXu;
     }
 
-    public void setPrice(BigDecimal price) {
-        this.price = price;
+    public String getDiaDiem() {
+        return diaDiem;
     }
 
-    public void setMileage(Integer mileage) {
-        this.mileage = mileage;
+    public void setDiaDiem(String diaDiem) {
+        this.diaDiem = diaDiem;
     }
 
-    public void setFuelType(String fuelType) {
-        this.fuelType = fuelType;
+    public String getKieuDang() {
+        return kieuDang;
     }
 
-    public void setTransmission(String transmission) {
-        this.transmission = transmission;
+    public void setKieuDang(String kieuDang) {
+        this.kieuDang = kieuDang;
     }
 
-    public void setColor(String color) {
-        this.color = color;
+    public String getSoKmDaDi() {
+        return soKmDaDi;
     }
 
-    public void setOrigin(String origin) {
-        this.origin = origin;
+    public void setSoKmDaDi(String soKmDaDi) {
+        this.soKmDaDi = soKmDaDi;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public String getHopSo() {
+        return hopSo;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setHopSo(String hopSo) {
+        this.hopSo = hopSo;
+    }
+
+    public String getTinhTrang() {
+        return tinhTrang;
+    }
+
+    public void setTinhTrang(String tinhTrang) {
+        this.tinhTrang = tinhTrang;
+    }
+
+    public String getNhienLieu() {
+        return nhienLieu;
+    }
+
+    public void setNhienLieu(String nhienLieu) {
+        this.nhienLieu = nhienLieu;
+    }
+
+    public String getGia() {
+        return gia;
+    }
+
+    public void setGia(String gia) {
+        this.gia = gia;
     }
 }

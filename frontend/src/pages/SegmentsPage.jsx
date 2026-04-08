@@ -2,7 +2,9 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 function formatPrice(value) {
-  return new Intl.NumberFormat("vi-VN").format(value) + " VNĐ";
+  const num = Number(value);
+  if (!Number.isFinite(num)) return "Chưa có giá";
+  return new Intl.NumberFormat("vi-VN").format(num) + " VNĐ";
 }
 
 function SegmentsPage() {
@@ -55,10 +57,15 @@ function SegmentsPage() {
         <>
           <div className="car-grid">
             {segments.map((segment) => (
-              <div key={segment.segmentId} className="car-card" style={{ cursor: "default" }}>
+              <div
+                key={segment.segmentId}
+                className="car-card"
+                style={{ cursor: "default" }}
+              >
                 <div className="car-card-body">
                   <div className="detail-badge">{segment.name}</div>
                   <p className="car-price">{formatPrice(segment.avgPrice)}</p>
+
                   <div className="car-meta-grid">
                     <div>
                       <span>Giá thấp nhất</span>
@@ -74,7 +81,7 @@ function SegmentsPage() {
                     </div>
                     <div>
                       <span>Hãng nổi bật</span>
-                      <strong>{segment.topBrands?.join(", ")}</strong>
+                      <strong>{segment.topBrands?.join(", ") || "Không có"}</strong>
                     </div>
                   </div>
 
@@ -92,8 +99,10 @@ function SegmentsPage() {
           {selectedSegment !== null && (
             <div className="related-section" style={{ marginTop: "30px" }}>
               <div className="section-head">
-                <h2>Xe trong phân khúc {selectedSegment}</h2>
-              </div>
+<h2>
+  Xe trong{" "}
+  {segments.find((s) => s.segmentId === selectedSegment)?.name || `phân khúc ${selectedSegment}`}
+</h2>              </div>
 
               {cars.length === 0 ? (
                 <p>Không có xe trong phân khúc này.</p>
@@ -102,19 +111,40 @@ function SegmentsPage() {
                   {cars.map((car) => (
                     <div key={car.id} className="car-card">
                       <div className="car-image-wrap">
-                        <img src={car.imageUrl} alt={car.model} className="car-image" />
+                        <img
+                          src={car.urlHinhAnh || "https://via.placeholder.com/400x250?text=No+Image"}
+                          alt={car.tieuDe || "Xe ô tô"}
+                          className="car-image"
+                        />
                       </div>
+
                       <div className="car-card-body">
                         <div className="car-title-row">
-                          <h3>{car.brand} {car.model}</h3>
-                          <span className="car-year">{car.year}</span>
+                          <h3>{car.tieuDe || "Không có tiêu đề"}</h3>
+                          <span className="car-year">{car.namSX || "N/A"}</span>
                         </div>
-                        <p className="car-price">{formatPrice(car.price)}</p>
+
+                        <p className="car-price">
+                          {formatPrice(car.priceValue ?? car.gia)}
+                        </p>
+
                         <div className="car-meta-grid">
-                          <div><span>Số km</span><strong>{car.mileage}</strong></div>
-                          <div><span>Nhiên liệu</span><strong>{car.fuelType}</strong></div>
-                          <div><span>Hộp số</span><strong>{car.transmission}</strong></div>
-                          <div><span>ID</span><strong>#{car.id}</strong></div>
+                          <div>
+                            <span>Số km</span>
+                            <strong>{car.soKmDaDi || "Không rõ"}</strong>
+                          </div>
+                          <div>
+                            <span>Nhiên liệu</span>
+                            <strong>{car.nhienLieu || "Không rõ"}</strong>
+                          </div>
+                          <div>
+                            <span>Hộp số</span>
+                            <strong>{car.hopSo || "Không rõ"}</strong>
+                          </div>
+                          <div>
+                            <span>ID</span>
+                            <strong>#{car.id}</strong>
+                          </div>
                         </div>
                       </div>
                     </div>
